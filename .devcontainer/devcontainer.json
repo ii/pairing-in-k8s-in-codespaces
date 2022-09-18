@@ -1,0 +1,11 @@
+{
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "mounts": ["source=/,target=/var/run/host,type=bind"],
+  "postCreateCommand": "create-and-attach",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:1": {},
+    "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {}
+  }
+}
