@@ -43,13 +43,13 @@ spec:
             - name: TZ
               value: "Pacific/Auckland"
             - name: GIT_COMMITTER_EMAIL
-              value: caleb@ii.coop
+              value: "${GIT_USER_EMAIL}"
             - name: GIT_COMMITTER_NAME
-              value: Caleb Woodbine
+              value: "${GIT_USER_NAME}"
             - name: GIT_AUTHOR_EMAIL
-              value: caleb@ii.coop
+              value: ${GIT_USER_EMAIL}
             - name: GIT_AUTHOR_NAME
-              value: Caleb Woodbine
+              value: "${GIT_USER_NAME}"
             - name: INIT_DEFAULT_REPOS_FOLDER
               value: /home/ii
             - name: INIT_DEFAULT_DIR
@@ -57,11 +57,11 @@ spec:
             - name: INIT_ORG_FILE
               value: /home/ii
             - name: SHARINGIO_PAIR_NAME
-              value: "ii-pairing-in-k8s-in-codespaces-v9w4rp74jjhxrw7"
+              value: "${CODESPACE_NAME}"
             - name: SHARINGIO_PAIR_USER
-              value: "BobyMCbobs"
+              value: "${GITHUB_USER}"
             - name: SHARINGIO_PAIR_KUBERNETES_CONTROLPLANE_ENDPOINT
-              value: 192.168.49.2
+              value: 
             - name: SHARINGIO_PAIR_LOAD_BALANCER_IP
               value: 192.168.49.2
             - name: PAIR_ENVIRONMENT_DEBUG
@@ -69,7 +69,7 @@ spec:
             - name: REINIT_HOME_FOLDER
               value: "true"
             - name: SHARINGIO_PAIR_BASE_DNS_NAME
-              value: ii-pairing-in-k8s-in-codespaces-v9w4rp74jjhxrw7.github.dev
+              value: "${CODESPACE_NAME}.github.dev"
           image: registry.gitlab.com/sharingio/environment/environment:2022.08.30.1450
           imagePullPolicy: IfNotPresent
           name: environment

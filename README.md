@@ -13,3 +13,7 @@ They are listening on the Node's IP on their port, but that port is not listing 
 
 The way of pairing will be quite different if this works out. It will be accessible via GitHub Codespace's managed domains+https.
 This means that Ingresses won't be as useful, e.g: I wouldn't be able to set the host of an Ingress to anything besides _'*'_.
+
+Minikube needs to use the none driver in order to bind to 127.0.0.1, to get the native service exposure.
+
+Idea: don't bring the dev to inside the cluster, bring the cluster to where they are (here)

@@ -15,3 +15,7 @@ minikube start \
 until kubectl version 2>&1 > /dev/null; do
     sleep 1s;
 done
+
+GIT_USER_NAME="$(git config --get user.name)"
+GIT_USER_EMAIL="$(git config --get user.email)"
+export GIT_USER_NAME GIT_USER_EMAIL
