@@ -7,9 +7,10 @@ RUN DEBIAN_FRONTEND=noninteractive \
     sudo \
     iproute2 \
     net-tools \
-    netcat
+    netcat \ 
+    vim
 RUN mkdir -p /etc/sudoers.d && \
   echo "%sudo    ALL=(ALL:ALL) NOPASSWD: ALL" > /etc/sudoers.d/sudo \
-  && useradd -m -G users,sudo ii
+  && useradd -m -G users,sudo -s /bin/bash ii
 COPY /host /
 USER ii

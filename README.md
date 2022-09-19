@@ -1,3 +1,15 @@
 # Pairing in k8s in Codespaces
 
 > A pairing environment inside kind inside Codespaces
+
+## Log
+### 2022-09-19
+I'm able to provision a custom environment.
+
+Minikube is already provided as a _feature_ for Codespaces, so I'm going to use that for the Kubernetes side of it.
+
+I'm having a hard time accessing Services that are set to LoadBalancer via the Codespaces port-forwarding.
+They are listening on the Node's IP on their port, but that port is not listing on the _ports_ section for accessible when forwarding manually.
+
+The way of pairing will be quite different if this works out. It will be accessible via GitHub Codespace's managed domains+https.
+This means that Ingresses won't be as useful, e.g: I wouldn't be able to set the host of an Ingress to anything besides _'*'_.

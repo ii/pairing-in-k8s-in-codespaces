@@ -1,0 +1,17 @@
+#!/bin/bash
+
+until docker ps -a 2>&1; do
+    sleep 5s;
+done
+
+docker ps -a
+docker images
+minikube start \
+  --vm-driver docker \
+  --kubernetes-version v1.24.5 \
+  --addons ingress \
+  --addons metallb
+
+until kubectl version 2>&1 > /dev/null; do
+    sleep 1s;
+done
