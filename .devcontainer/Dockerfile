@@ -11,7 +11,7 @@ RUN DEBIAN_FRONTEND=noninteractive \
     vim \
     conntrack \
     curl \
-    envsubst
+    gettext-base
 RUN curl -o /tmp/cri-dockerd.deb -L https://github.com/Mirantis/cri-dockerd/releases/download/v0.2.5/cri-dockerd_0.2.5.3-0.ubuntu-jammy_amd64.deb \
   && apt install -y /tmp/cri-dockerd.deb
 RUN mkdir -p /etc/sudoers.d && \

@@ -19,3 +19,14 @@ done
 GIT_USER_NAME="$(git config --get user.name)"
 GIT_USER_EMAIL="$(git config --get user.email)"
 export GIT_USER_NAME GIT_USER_EMAIL
+
+cd "${localWorkspaceFolder}"
+envsubst < ./manifests/environment.yaml | kubectl apply -f -
+
+(
+  while true; do
+    echo "Listening and tunneling $(date)"
+    date | tee -a /tmp/tunnel-pls.log
+    minikube tunnel --bind-address='*'
+  done
+)&
